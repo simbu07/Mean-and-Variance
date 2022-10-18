@@ -1,3 +1,4 @@
+
 #  Mean and variance of a discrete  distribution
 
 
@@ -44,11 +45,35 @@ It shows the distance of a random variable from its mean. It is calcualted as
 
 
 # Experiment :
-
+![model-1](https://user-images.githubusercontent.com/94525786/196346927-3809b38b-e953-4276-b1e1-5e67c5089196.jpg)
 
 # Program :
+```-python
+Devloped by:Silambarsan K
+ROLL NO:212221230101
 
 
-
-
-# Results and Output : 
+import numpy as np
+L=[int(i) for i in input().split()]
+N=len(L); M=max(L) 
+x=list();f=list()
+for i in range (M+1):
+    c = 0
+    for j in range(N):
+        if L[j]==i:
+            c=c+1
+    f.append(c)
+    x.append(i)
+sf=np.sum(f)
+p=list()
+for i in range(M+1):
+    p.append(f[i]/sf) 
+mean=np.inner(x,p)
+EX2=np.inner(np.square(x),p)
+var=EX2-mean**2 
+SD=np.sqrt(var)
+print("The Mean arrival rate is %.3f "%mean)
+print("The Variance of arrival from feeder is %.3f "%var) 
+print("The Standard deviation of arrival from feeder is %.3F "%SD)
+```
+# Output : 
